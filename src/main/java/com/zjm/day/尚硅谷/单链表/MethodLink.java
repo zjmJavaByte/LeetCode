@@ -170,7 +170,7 @@ public class MethodLink {
     }
 
     /**
-     * 查找第k个节点
+     * 查找倒数第k个节点
      * @param k
      * @return
      */
