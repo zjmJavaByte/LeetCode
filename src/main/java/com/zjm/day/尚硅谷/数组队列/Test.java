@@ -25,6 +25,10 @@ public class Test {
         System.out.println();
 
         System.out.println(arrayQueue.headQueue());
+
+        System.out.println();
+
+        System.out.println(arrayQueue.size());
     }
 
 

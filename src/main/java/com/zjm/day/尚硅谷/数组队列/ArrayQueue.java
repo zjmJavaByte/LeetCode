@@ -9,13 +9,13 @@ package com.zjm.day.尚硅谷.数组队列;
  */
 public class ArrayQueue {
 
-    private int maxSize;
+    private final int maxSize;
 
     private int front;
 
     private int rear;
 
-    private int[] arr;
+    private final int[] arr;
 
 
     public ArrayQueue(int maxSize) {
@@ -78,4 +78,10 @@ public class ArrayQueue {
         }
         return arr[front + 1];
     }
+
+    public int size(){
+        return rear - front;
+    }
+
+
 }
