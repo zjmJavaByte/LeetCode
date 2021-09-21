@@ -2,7 +2,7 @@ package com.zjm.day.尚硅谷.双链表;
 
 /**
  * @Author zjm
- * @Description:
+ * @Description: 双链表实体类
  * @Date: Created in 12:24 2021/9/10
  * @Modified By:
  */

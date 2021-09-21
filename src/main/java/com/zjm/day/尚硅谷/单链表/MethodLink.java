@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * @Author zjm
- * @Description:
+ * @Description: 单链表方法
  * @Date: Created in 13:12 2021/9/6
  * @Modified By:
  */

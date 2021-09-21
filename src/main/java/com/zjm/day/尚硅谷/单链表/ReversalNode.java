@@ -4,7 +4,7 @@ import static com.zjm.day.尚硅谷.单链表.MethodLink.mergeLink;
 
 /**
  * @Author zjm
- * @Description:
+ * @Description: 单链表测试
  * @Date: Created in 12:49 2021/9/6
  * @Modified By:
  */
