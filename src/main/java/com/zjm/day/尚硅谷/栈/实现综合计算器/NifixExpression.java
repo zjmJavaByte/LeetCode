@@ -3,11 +3,14 @@ package com.zjm.day.尚硅谷.栈.实现综合计算器;
 
 import static com.zjm.day.尚硅谷.栈.实现综合计算器.Stack2.*;
 
-public class Test {
+/**
+ * 利用中缀表达式实现简单的运算（不包含小括号）
+ */
+public class NifixExpression {
 
 
     public static void main(String[] args) {
-        String expresion = "3+2*6-2";//中缀表达式
+        String expresion = "30+2*6000-2";//中缀表达式
         Stack2 numStack = new Stack2(10);
         Stack2 operStack = new Stack2(10);
 
@@ -17,6 +20,7 @@ public class Test {
         int oper = 0;
         int res = 0;
         char ch = ' ';
+        String keepNum = "";
         while (true){
             //得到表示式的每个字符
             ch = expresion.substring(index,index+1).charAt(0);
@@ -45,7 +49,22 @@ public class Test {
             }else {
                 //如果为数字
                 //其实获取到的应该是字符  '1' ASCII 上'1'为49  ，所以需要减去48
-                numStack.push(ch - 48);
+                //numStack.push(ch - 48);  此种方法只适合单位数字
+
+                //如果是多位数字    300+2*6-2  就需要特殊处理
+                //定义一个字符串变量用于拼接
+                keepNum += ch;
+                if (index == expresion.length() - 1){
+                    numStack.push(Integer.parseInt(keepNum));
+                }else {
+                    //判断下一个是否是数字
+                    if (isOperation(expresion.substring(index+1,index+2).charAt(0))){
+                        //如果后一位是运算符
+                        numStack.push(Integer.parseInt(keepNum));
+                        keepNum = "";
+                    }
+                }
+
             }
 
             index++;

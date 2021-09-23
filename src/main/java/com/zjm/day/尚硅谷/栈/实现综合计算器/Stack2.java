@@ -1,5 +1,8 @@
 package com.zjm.day.尚硅谷.栈.实现综合计算器;
 
+/**
+ * 数组实现栈
+ */
 public class Stack2 {
 
     private int maxSize;//栈的大小
