@@ -3,6 +3,7 @@ package com.zjm.day.尚硅谷.栈.实现综合计算器;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+import java.util.Stack;
 
 /**
  * 后缀表达式
@@ -39,6 +40,56 @@ public class SuffixExpression /*extends Application*/ {
         System.out.println(primaryStage);
     }*/
 
+    public static void main(String[] args) {
+        String expression = "3 4 + 5 * 6 -";
+        Stack<Integer> stack = new Stack<>();
+        String[] s = expression.split(" ");
+        for (String s1 : s) {
+            if (s1.matches("\\d+")){
+                stack.push(Integer.parseInt(s1));
+            }else {
+                Integer num1 = stack.pop();
+                Integer num2 = stack.pop();
+                int cal = cal(num1, num2, s1);//后出栈的在运算符前面
+                stack.push(cal);
+            }
+        }
+        System.out.println(stack.pop());
 
+
+
+
+    }
+
+    /**
+     * 判断是否为运算符
+     * @param val
+     * @return
+     */
+    public static boolean isOperation(String val){
+        return val.equals("*") || val.equals("/") || val.equals("-") || val.equals("+");
+    }
+
+
+    public static int cal(int num1,int num2,String oper){
+        int res = 0;//用于存放计算的结果
+        switch (oper){
+            case "+":
+                res = num1 + num2;
+                break;
+            case "-":
+                res = num2 - num1;//后出栈的作为被减数
+                break;
+            case "*":
+                res = num1 * num2;
+                break;
+            case "/":
+                res = num2 / num1;//后出栈的作为被除数
+                break;
+            default:
+                break;
+        }
+        return res;
+    }
 
 }

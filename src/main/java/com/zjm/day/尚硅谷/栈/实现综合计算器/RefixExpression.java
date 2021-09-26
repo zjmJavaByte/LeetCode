@@ -1,5 +1,7 @@
 package com.zjm.day.尚硅谷.栈.实现综合计算器;
 
+import java.util.Stack;
+
 /**
  * 前缀表达式 --》》波兰表达式
  * 前缀表达式运算符位于操作符之前
@@ -20,5 +22,61 @@ package com.zjm.day.尚硅谷.栈.实现综合计算器;
 public class RefixExpression {
 
 
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+        String expression = "- * + 3 4 5 6";
+        String[] s = expression.split(" ");
+        for (int i = s.length - 1; i >= 0; i--) {
+            if (s[i].matches("\\d+")){
+                stack.push(Integer.parseInt(s[i]));
+            }else {
+                Integer num1 = stack.pop();
+                Integer num2 = stack.pop();
+                int cal = cal(num1, num2, s[i]);//先出栈的在运算符前面
+                stack.push(cal);
+            }
+        }
+        System.out.println(stack.pop());
+
+    }
+
+    /**
+     * 判断是否为运算符
+     * @param val
+     * @return
+     */
+    public static boolean isOperation(String val){
+        return val.equals("*") || val.equals("/") || val.equals("-") || val.equals("+");
+
+
+    }
+
+    /**
+     * 运算
+     * @param num1
+     * @param num2
+     * @param oper
+     * @return
+     */
+    public static int cal(int num1,int num2,String oper){
+        int res = 0;//用于存放计算的结果
+        switch (oper){
+            case "+":
+                res = num1 + num2;
+                break;
+            case "-":
+                res = num1 - num2;//先出栈的作为被减数
+                break;
+            case "*":
+                res = num1 * num2;
+                break;
+            case "/":
+                res = num1 / num2;//先出栈的作为被除数
+                break;
+            default:
+                break;
+        }
+        return res;
+    }
 
 }

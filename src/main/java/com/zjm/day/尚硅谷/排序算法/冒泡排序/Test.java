@@ -12,7 +12,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        BubbleSort bubbleSort = new BubbleSort(80000);
+        BubbleSort bubbleSort = new BubbleSort(800000);
         //bubbleSort.show();
         System.out.println(LocalDateTime.now());
         bubbleSort.sort();
