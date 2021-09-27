@@ -41,7 +41,8 @@ public class SuffixExpression /*extends Application*/ {
     }*/
 
     public static void main(String[] args) {
-        String expression = "3 4 + 5 * 6 -";
+        //String expression = "3 4 + 5 * 6 -";
+        String expression = "1 2 3 + 4 * + 5 -";
         Stack<Integer> stack = new Stack<>();
         String[] s = expression.split(" ");
         for (String s1 : s) {
@@ -55,7 +56,6 @@ public class SuffixExpression /*extends Application*/ {
             }
         }
         System.out.println(stack.pop());
-
 
 
 
