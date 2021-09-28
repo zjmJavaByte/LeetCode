@@ -24,18 +24,20 @@ public class InsertSort {
     }
 
 
-/*    public void sort(){
+    public void sortTwo(){
         for (int i = 1; i < arr.length; i++) {
             int value = arr[i];
             for (int j = i - 1; j >= 0; j--) {
                 if (value < arr[j]){
-                    arr[i] = arr[j];
-                    arr[j + 1] = value;
+                    arr[j + 1] = arr[j];
+                }else {
+                    arr[j] = value;
+                    break;
                 }
             }
         }
 
-    }*/
+    }
     public void sort(){
         for (int i = 1; i < arr.length; i++) {
             int index = i - 1;

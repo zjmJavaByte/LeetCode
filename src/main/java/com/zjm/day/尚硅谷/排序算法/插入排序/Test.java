@@ -14,7 +14,7 @@ public class Test {
 
 
 
-        InsertSort insertSort = new InsertSort(100);
+        InsertSort insertSort = new InsertSort(1000);
         //bubbleSort.show();
         System.out.println(LocalDateTime.now());
         insertSort.sort();
@@ -22,20 +22,4 @@ public class Test {
         insertSort.show();
     }
 
-   /* public void sortTwo(){
-
-
-        for (int i = 1; i < arr.length; i++) {
-            int index = i - 1;
-            int value = arr[i];
-            while (index >= 0 && value < arr[index]){
-                arr[index + 1] = arr[index];
-                index--;
-            }
-            if (index != i- 1){
-                arr[index + 1] = value;
-            }
-
-        }
-    }*/
 }
