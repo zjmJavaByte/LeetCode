@@ -1,4 +1,4 @@
-package com.zjm.day.尚硅谷.排序算法.冒泡排序;
+package com.zjm.day.尚硅谷.排序算法.选择排序;
 
 import java.time.LocalDateTime;
 
@@ -12,11 +12,11 @@ public class Test {
 
     public static void main(String[] args) {
 
-        BubbleSort bubbleSort = new BubbleSort(80000);
+        SelectSort selectSort = new SelectSort(100000);
         //bubbleSort.show();
         System.out.println(LocalDateTime.now());
-        bubbleSort.sort();
+        selectSort.sort();
         System.out.println(LocalDateTime.now());
-        //bubbleSort.show();
+        //selectSort.show();
     }
 }
